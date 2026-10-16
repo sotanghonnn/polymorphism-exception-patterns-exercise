@@ -163,6 +163,10 @@ public class Main {
     // ---------- Option 3 ----------
 
     private static void changeDeliveryService(ConsoleInput input, ParcelManager manager) {
+        if (manager.isEmpty()) {
+            System.out.println("No parcels registered yet.");
+            return;
+        }
         String trackingNumber = input.readTrackingNumber();
         try {
             manager.findPendingParcel(trackingNumber); // not found / already delivered stop here
@@ -181,6 +185,10 @@ public class Main {
     // ---------- Option 4 ----------
 
     private static void markAsDelivered(ConsoleInput input, ParcelManager manager) {
+        if (manager.isEmpty()) {
+            System.out.println("No parcels registered yet.");
+            return;
+        }
         String trackingNumber = input.readTrackingNumber();
         try {
             manager.markAsDelivered(trackingNumber);

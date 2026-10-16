@@ -56,6 +56,10 @@ public class ParcelManager {
         return parcel;
     }
 
+    public boolean isEmpty() {
+        return parcels.isEmpty();
+    }
+
     /** Read-only view of all parcels, in the order they were added. */
     public List<Parcel> getAllParcels() {
         return Collections.unmodifiableList(parcels);
